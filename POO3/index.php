@@ -1,0 +1,62 @@
+<?php
+
+require_once 'Vehicle.php';
+require_once 'Car.php';
+require_once 'Bicycle.php';
+require_once 'Truck.php';
+require_once 'HighWay.php';
+require_once 'MotorWay.php';
+require_once 'PedestrianWay.php';
+require_once 'ResidentialWay.php';
+require_once 'Skateboard.php';
+
+
+/* ------------ On the MotorWay ---------- */
+
+$MotorWay1 = new MotorWay();
+$Car1 = new Car("blue", 4, "fuel");
+$Car2 = new Car("red", 6, "electric");
+
+var_dump($MotorWay1->getmaxSpeed());
+var_dump($MotorWay1);
+
+
+$MotorWay1->addVehicle($Car1); // ajoute une nouvelle voiture sur l'autoroute
+$MotorWay1->addVehicle($Car2); // ajoute une 2nde nouvelle voiture sur l'autoroute
+
+var_dump($MotorWay1->currentVehicles()); // Car1 et Car2 apparaissent dans la liste des véhicules autorisés sur l'autoroute
+
+
+
+
+/* ----------------- On the ResidentialWay -------------------- */
+
+$ResidentialWay1 = new ResidentialWay();
+$Bike2 = new Bicycle("green", 8);
+$Car2 = new Car("pink", 12, "water");
+
+$ResidentialWay1->addVehicle($Bike2); // ajoute un nouveau vélo en ville
+$ResidentialWay1->addVehicle($Car2); // ajoute une nouvelle voiture en ville
+
+var_dump($ResidentialWay1->currentVehicles()); // Le vélo Bike2 et la voiture Car2 apparaissent dans la liste des véhicules autorisés en ville
+
+
+
+
+
+/* ------------------- On the pedestrian Way -------------------- */
+
+$PedestrianWay1 = new PedestrianWay();
+$Bike1 = new Bicycle("yellow", 3);
+
+
+$PedestrianWay1->addVehicle($Bike1); // ajoute un nouveau vélo sur la route piétonne
+$PedestrianWay1->addVehicle($Car2); // ajoute une nouvelle voiture sur la route piétonne
+
+
+$Skate1 = new Skateboard("grey", 1);
+$PedestrianWay1->addVehicle($Skate1); // ajoute un nouveau skateboard sur la route piétonne
+
+var_dump($PedestrianWay1->currentVehicles()); // seuls le vélo et le skate sont ajoutés au tableau, la voiture n'étant pas autorisée sur la route piétonne
+
+

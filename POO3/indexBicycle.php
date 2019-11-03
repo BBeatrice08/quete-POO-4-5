@@ -1,0 +1,3 @@
+<?php
+
+$bike = new Bicycle();
