@@ -5,7 +5,7 @@ require_once  'Car.php';
 
 class MotorWay extends HighWay
 {
-    protected $nbLane= 4;
+    protected $nbLane = 4;
 
     protected $maxSpeed = 130;
 

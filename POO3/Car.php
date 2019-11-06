@@ -1,7 +1,8 @@
 <?php
 require_once 'Vehicle.php';
+require_once 'LightableInterface.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
 
     const ALLOWED_ENERGIES = [
@@ -49,6 +50,18 @@ class Car extends Vehicle
     {
         $this->energyLevel = $energyLevel;
     }
+
+
+    public function switchOn(): bool
+    {
+        return 1;
+    }
+
+    public function switchOff(): bool
+    {
+        return 0;
+    }
+
 }
 
 
