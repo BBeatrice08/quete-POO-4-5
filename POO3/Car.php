@@ -8,9 +8,9 @@ class Car extends Vehicle implements LightableInterface
     const ALLOWED_ENERGIES = [
         'fuel',
         'electric',
+        'gas oil'gi
 
     ];
-
 
     /**
      * @var string
@@ -21,6 +21,10 @@ class Car extends Vehicle implements LightableInterface
      * @var int
      */
     private $energyLevel;
+
+    private $hasParkBrake = true;
+
+    protected $start;
 
     public function __construct(string $color, int $nbSeats, string $energy)
     {
@@ -51,7 +55,6 @@ class Car extends Vehicle implements LightableInterface
         $this->energyLevel = $energyLevel;
     }
 
-
     public function switchOn(): bool
     {
         return 1;
@@ -62,6 +65,23 @@ class Car extends Vehicle implements LightableInterface
         return 0;
     }
 
+    public function getParkBrake()
+    {
+        return $this->hasParkBrake;
+    }
+
+    public function setParkBrake()
+    {
+        $this->hasParkBrake = false;
+    }
+
+    public function start()
+    {
+        if ($this->hasParkBrake) {
+            throw new Exception("park brake is on");
+        }
+
+    }
 }
 
 
