@@ -13,9 +13,18 @@ require_once 'RechargeableInterface.php';
 require_once 'ElectricBike.php';
 require_once 'ChargingStation.php';
 require_once 'LightableInterface.php';
+require_once 'Speedometer.php';
+
+/* ---------------- POO Static -------------- */
+
+echo Speedometer::convertKmToMiles('10 kms');
+echo "<br>";
+echo Speedometer::milesToKm('2 miles');
+
 
 /* ------------- Homer is driving ! (quête POO 5) ---------------- */
 
+/*
 $homerCar = new Car('pink',6,"fuel");
 $margeCar = new Car('yellow', 4, 'gas oil');
 
@@ -33,7 +42,7 @@ try {
     echo "Ma voiture roule comme un donut";
 }
 var_dump($homerCar);
-
+*/
 
 /* ------------ On the MotorWay ---------- */
 /*
